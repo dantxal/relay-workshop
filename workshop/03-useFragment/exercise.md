@@ -1,6 +1,6 @@
 # 03 - useFragment
 
-Learn how to use useFragment to let each componente declares its own data dependencies
+Learn how to use useFragment to let each component declare its own data dependencies
 
 ## Exercise
 
