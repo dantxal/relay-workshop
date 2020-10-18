@@ -3,7 +3,7 @@
 Relay let you declare which data each component will need to render.
 Relay will fetch the data to you based on this declarations.
 
-## Relay Archicture
+## Relay Architecture
 
 Relay is composed by 3 parts:
 - Relay Compiler: that will optimize your GraphQL fragments and queries.
