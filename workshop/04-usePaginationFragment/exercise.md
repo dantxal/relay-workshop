@@ -37,12 +37,14 @@ fragment Feed_query on Query {
 ```
 
 - @arguments
-Use @arguments to declare "local" arguments to your fragments.
+Use @arguments to declare "local" arguments to your fragments. Note that @argumentDefinistions are supposed to go right after fragment's type.
 ```jsx 
-@argumentDefinitions(
+fragment Feed_query on Query @argumentDefinitions(
   first: { type: Int, defaultValue: 1 }, 
   after: { type: String }
-)
+) {
+    posts(first: $first, after: $after) @connection(key: "Feed_posts", filters: []) {
+
 ```
 
 - @refetchable
