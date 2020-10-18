@@ -9,7 +9,7 @@ It will generate many requests to your server, making your app slow and causing 
 
 ## use a single `useLazyLoadQuery` and use prop drilling
 You can have a single `useLazyLoadQuery` per route, and do prop drilling to other components.
-This will generate a single request per route, but will keep all components tighly coupled.
+This will generate a single request per route, but will keep all components tightly coupled.
 If you change a data requirement of a component down in the tree, you going to modify more components and prop drilling.
 
 ```jsx
