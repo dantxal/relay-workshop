@@ -38,7 +38,8 @@ fragment Feed_query on Query {
 
 - @arguments
 Use @arguments to declare "local" arguments to your fragments. 
-*Note* that @argumentDefinistions are *supposed to go right after fragment's type*.
+**Note** that @argumentDefinistions are **supposed to go right after fragment's type**.
+
 ```jsx 
 fragment Feed_query on Query @argumentDefinitions(
   first: { type: Int, defaultValue: 1 }, 
@@ -47,6 +48,7 @@ fragment Feed_query on Query @argumentDefinitions(
     posts(first: $first, after: $after) @connection(key: "Feed_posts", filters: []) {
 
 ```
+
 
 - @refetchable
 Use @refetchable to let Relay generate a refetch query for your pagination or refetch fragments
