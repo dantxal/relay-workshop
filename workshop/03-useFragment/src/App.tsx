@@ -1,11 +1,11 @@
 import React from 'react';
-
-import { Flex, Text } from 'rebass';
-import { Content, Card } from '@workshop/ui';
-
 import { useLazyLoadQuery, graphql } from 'react-relay/hooks';
 
+import { Flex, Text } from 'rebass';
+import { Content } from '@workshop/ui';
+
 import { AppQuery } from './__generated__/AppQuery.graphql';
+import Post from './Post';
 
 const App = () => {
   const response = useLazyLoadQuery<AppQuery>(
@@ -15,7 +15,7 @@ const App = () => {
           edges {
             node {
               id
-              content
+              ...Post_post
             }
           }
         }
@@ -35,10 +35,7 @@ const App = () => {
         <Text>Posts</Text>
         <Flex flexDirection='column'>
           {posts.edges.map(({ node }) => (
-            <Card mt='10px' flexDirection='column' p='10px' key={node}>
-              <Text>id: {node.id}</Text>
-              <Text>content: {node.content}</Text>
-            </Card>
+            <Post key={node.id} post={node} />
           ))}
         </Flex>
       </Flex>
