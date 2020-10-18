@@ -37,7 +37,8 @@ fragment Feed_query on Query {
 ```
 
 - @arguments
-Use @arguments to declare "local" arguments to your fragments. Note that @argumentDefinistions are supposed to go right after fragment's type.
+Use @arguments to declare "local" arguments to your fragments. 
+*Note* that @argumentDefinistions are *supposed to go right after fragment's type*.
 ```jsx 
 fragment Feed_query on Query @argumentDefinitions(
   first: { type: Int, defaultValue: 1 }, 
